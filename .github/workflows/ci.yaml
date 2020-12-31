@@ -1,0 +1,32 @@
+name: CI
+
+on:
+  push:
+    branches: [ 'main' ]
+  pull_request:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+
+      - run: pip install mkdocs-material mkdocs-git-revision-date-plugin mkdocs-git-revision-date-localized-plugin
+
+      - run: mkdocs build
+        if: github.event_name == 'pull_request'
+
+      - run: mkdocs gh-deploy --force
+        if: github.event_name != 'pull_request'
+
+      - uses: actions/upload-artifact@v2
+        with:
+          name: docs-template
+          path: site

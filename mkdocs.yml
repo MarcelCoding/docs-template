@@ -1,0 +1,77 @@
+site_name: Docs Template
+site_url: https://marcelcoding.github.io/docs-template/
+repo_url: https://github.com/marcelcoding/docs-template/
+repo_name: marcelcoding/docs-template
+site_description: "MkDocs Template Repository"
+site_author: https://github.com/marcelcoding/
+remote_branch: gh-pages
+edit_uri: edit/main/docs
+# copyright: Copyright &copy; <year> <author>
+
+# https://squidfunk.github.io/mkdocs-material/setup/setting-up-versioning/
+
+theme:
+  name: 'material'
+  palette:
+    scheme: preference
+    primary: grey
+    accent: lime
+
+  font:
+    text: Ubuntu
+    code: Ubuntu Mono
+
+  language: en
+  direction: ltr
+  icon:
+    repo: fontawesome/brands/github
+
+  features:
+    - search.suggest
+    - search.highlight
+    - search.share
+
+    - navigation.instant
+    # - navigation.tabs
+    # - navigation.tabs.sticky
+    - navigation.sections
+  # - navigation.expand
+
+markdown_extensions:
+  - toc:
+      permalink: true
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - admonition
+  - pymdownx.tabbed
+  - attr_list
+
+plugins:
+  - git-revision-date
+  - git-revision-date-localized
+  - search:
+      prebuild_index: true
+      lang:
+        - en
+
+extra:
+  social:
+    - icon: fontawesome/solid/globe
+      link: https://marcelcoding.github.io
+    - icon: fontawesome/brands/docker
+      link: https://hub.docker.com/r/marcelcoding
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/MarcelCoding
+    - icon: fontawesome/brands/github
+      link: https://github.com/MarcelCoding
+
+nav:
+  - 'Overview': index.md
+#  - 'Main':
+#      - 'Overview': 'sub/index.md'
+
+extra_css:
+  - assets/main.css
+
+extra_javascript:
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
