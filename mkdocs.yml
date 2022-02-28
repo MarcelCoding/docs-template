@@ -57,7 +57,7 @@ plugins:
 extra:
   social:
     - icon: fontawesome/solid/globe
-      link: https://marcelcoding.github.io
+      link: https://m4rc3l.de
     - icon: fontawesome/brands/docker
       link: https://hub.docker.com/r/marcelcoding
     - icon: fontawesome/brands/twitter
